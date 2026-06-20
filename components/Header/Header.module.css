@@ -16,12 +16,14 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 24px;
+  gap: 12px;
 }
 
 .logoSection {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .logoIcon {
@@ -35,6 +37,7 @@
   color: white;
   font-weight: 800;
   font-size: 16px;
+  flex-shrink: 0;
 }
 
 .logoText h1 {
@@ -87,6 +90,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 /* Tab Identity — shows Tab ID + LEADER badge */
@@ -169,6 +173,7 @@
   font-size: 18px;
   transition: all var(--transition-fast);
   color: var(--text-secondary);
+  flex-shrink: 0;
 }
 
 .themeToggle:hover {
@@ -178,10 +183,19 @@
   transform: rotate(15deg);
 }
 
-@media (max-width: 768px) {
+/* ===== Tablet ===== */
+@media (max-width: 900px) {
   .headerInner {
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
+  }
+
+  .logoSection {
+    order: 1;
+  }
+
+  .actions {
+    order: 2;
   }
 
   .nav {
@@ -191,11 +205,92 @@
   }
 
   .navButton {
-    padding: 6px 14px;
+    padding: 7px 16px;
     font-size: 12px;
   }
 
   .tabIdentity {
     display: none;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 640px) {
+  .header {
+    padding: 10px 0;
+  }
+
+  .headerInner {
+    padding: 0 16px;
+    gap: 8px;
+  }
+
+  .logoIcon {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .logoText h1 {
+    font-size: 15px;
+  }
+
+  .logoText p {
+    font-size: 10px;
+  }
+
+  .logoSection {
+    gap: 8px;
+  }
+
+  .nav {
+    padding: 3px;
+    gap: 2px;
+  }
+
+  .navButton {
+    padding: 6px 12px;
+    font-size: 11px;
+    flex: 1;
+    text-align: center;
+  }
+
+  .tabCountBadge {
+    padding: 5px 10px;
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .themeToggle {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 400px) {
+  .headerInner {
+    padding: 0 12px;
+  }
+
+  .logoText p {
+    display: none;
+  }
+
+  .navButton {
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+
+  .tabCountBadge {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  .themeToggle {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
   }
 }

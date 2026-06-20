@@ -28,8 +28,20 @@
   --accent-success: #10b981;
   --accent-success-light: #d1fae5;
   --accent-danger: #ef4444;
+  --accent-danger-light: #fef2f2;
   --accent-purple: #8b5cf6;
   --accent-purple-light: #ede9fe;
+
+  /* Semantic: best/safe scenario */
+  --best-bg: #ecfdf5;
+  --best-border: #6ee7b7;
+  --best-badge-bg: #059669;
+  --best-text: #065f46;
+  --best-glow: rgba(16, 185, 129, 0.15);
+
+  /* Semantic: interest card accent */
+  --interest-card-bg: linear-gradient(135deg, #f59e0b, #d97706);
+  --interest-card-text: #ffffff;
 
   --emi-highlight: #4f6ef7;
   --interest-color: #f59e0b;
@@ -81,8 +93,20 @@
   --accent-success: #22c55e;
   --accent-success-light: #0d2618;
   --accent-danger: #ef4444;
+  --accent-danger-light: #2a1215;
   --accent-purple: #3b82f6;
   --accent-purple-light: #162036;
+
+  /* Semantic: best/safe scenario */
+  --best-bg: #0c1a2e;
+  --best-border: #3b82f6;
+  --best-badge-bg: #2563eb;
+  --best-text: #93c5fd;
+  --best-glow: rgba(59, 130, 246, 0.2);
+
+  /* Semantic: interest card accent */
+  --interest-card-bg: linear-gradient(135deg, #eab308, #ca8a04);
+  --interest-card-text: #0a0a0b;
 
   --emi-highlight: #3b82f6;
   --interest-color: #eab308;
@@ -147,8 +171,17 @@ body {
 
 /* ========== Sync Indicator ========== */
 @keyframes syncPulse {
-  0%, 100% { opacity: 0; transform: scale(0.8); }
-  50% { opacity: 1; transform: scale(1); }
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .sync-indicator {
@@ -183,6 +216,18 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 0 12px;
+  }
 }
 
 /* ========== Number Input Arrows Removal ========== */
@@ -243,6 +288,7 @@ input[type='range']::-moz-range-thumb {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -254,6 +300,7 @@ input[type='range']::-moz-range-thumb {
     opacity: 0;
     transform: translateX(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -261,11 +308,21 @@ input[type='range']::-moz-range-thumb {
 }
 
 @keyframes countUp {
-  from { opacity: 0.5; }
-  to { opacity: 1; }
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }

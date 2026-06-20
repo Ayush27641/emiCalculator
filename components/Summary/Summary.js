@@ -20,11 +20,11 @@ export default function Summary({ loanAmount, interestRate, tenure }) {
           <div className={styles.summaryLabel}>Monthly EMI</div>
           <div className={styles.summaryValue} id="emi-value">{formatCurrency(emi)}</div>
         </div>
-        <div className={styles.summaryCard}>
+        <div className={`${styles.summaryCard} ${styles.summaryCardInterest}`}>
           <div className={styles.summaryLabel}>Total Interest</div>
           <div className={styles.summaryValue} id="total-interest-value">{formatCurrency(totalInterest)}</div>
         </div>
-        <div className={styles.summaryCard}>
+        <div className={`${styles.summaryCard} ${styles.summaryCardTotal}`}>
           <div className={styles.summaryLabel}>Total Amount</div>
           <div className={styles.summaryValue} id="total-amount-value">{formatCurrency(totalPayable)}</div>
         </div>

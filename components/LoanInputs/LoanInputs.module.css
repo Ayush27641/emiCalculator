@@ -129,3 +129,65 @@
   pointer-events: none;
   transition: width 50ms ease;
 }
+
+/* ===== Tablet ===== */
+@media (max-width: 768px) {
+  .card {
+    padding: 22px;
+  }
+
+  .inputGroup {
+    margin-bottom: 20px;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 640px) {
+  .card {
+    padding: 18px;
+    border-radius: var(--radius-md);
+  }
+
+  .cardTitle {
+    font-size: 15px;
+  }
+
+  .cardSubtitle {
+    font-size: 11px;
+    margin-bottom: 18px;
+  }
+
+  .inputGroup {
+    margin-bottom: 18px;
+  }
+
+  .inputWrapper {
+    gap: 8px;
+  }
+
+  .numberInput {
+    padding: 9px 10px;
+    font-size: 14px;
+  }
+
+  .unitLabel {
+    font-size: 12px;
+    min-width: 40px;
+  }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 400px) {
+  .card {
+    padding: 14px;
+  }
+
+  .numberInput {
+    padding: 8px 8px;
+    font-size: 13px;
+  }
+
+  .inputLabelText {
+    font-size: 12px;
+  }
+}

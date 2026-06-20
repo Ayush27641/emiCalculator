@@ -7,6 +7,12 @@ export const metadata = {
   keywords: "EMI calculator, loan calculator, amortization schedule, shared workspace, real-time sync",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>

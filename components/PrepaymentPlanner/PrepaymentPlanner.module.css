@@ -38,6 +38,7 @@
   flex-direction: column;
   align-items: center;
   gap: 4px;
+  min-width: 0;
 }
 
 .loanSummaryLabel {
@@ -46,6 +47,7 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: var(--text-tertiary);
+  white-space: nowrap;
 }
 
 .loanSummaryValue {
@@ -53,6 +55,7 @@
   font-weight: 700;
   color: var(--text-primary);
   font-variant-numeric: tabular-nums;
+  word-break: break-word;
 }
 
 .loanInputWrapper {
@@ -119,6 +122,7 @@
 .leftPanel {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .sectionTitle {
@@ -151,10 +155,12 @@
   gap: 12px;
   align-items: flex-end;
   margin-bottom: 12px;
+  flex-wrap: wrap;
 }
 
 .formGroup {
   flex: 1;
+  min-width: 100px;
 }
 
 .formLabel {
@@ -197,6 +203,7 @@
   cursor: pointer;
   white-space: nowrap;
   transition: all var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .addPrepaymentBtn:hover {
@@ -229,12 +236,15 @@
   border-radius: var(--radius-sm);
   margin-bottom: 8px;
   animation: slideIn 0.2s ease;
+  gap: 8px;
 }
 
 .prepaymentInfo {
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
+  flex-wrap: wrap;
 }
 
 .prepaymentMonth {
@@ -244,12 +254,15 @@
   background: var(--accent-primary-light);
   padding: 3px 10px;
   border-radius: var(--radius-full);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .prepaymentAmount {
   font-size: 14px;
   font-weight: 600;
   color: var(--text-primary);
+  word-break: break-word;
 }
 
 .removeBtn {
@@ -265,6 +278,7 @@
   justify-content: center;
   border-radius: 4px;
   transition: all var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .removeBtn:hover {
@@ -287,6 +301,7 @@
 .rightPanel {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .savingsGrid {
@@ -318,6 +333,15 @@
 .savingsCardHighlight {
   background: var(--accent-success-light);
   border-color: var(--accent-success);
+  box-shadow: 0 2px 12px var(--best-glow);
+}
+
+.savingsCardHighlight .savingsLabel {
+  color: var(--accent-success);
+}
+
+.savingsCardHighlight:hover {
+  box-shadow: 0 4px 20px var(--best-glow);
 }
 
 .savingsLabel {
@@ -333,6 +357,7 @@
   font-size: 22px;
   font-weight: 800;
   color: var(--text-primary);
+  word-break: break-word;
 }
 
 .savingsValueGreen {
@@ -350,6 +375,7 @@
   border: 1px solid var(--border-primary);
   max-height: 500px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .table {
@@ -371,6 +397,7 @@
   position: sticky;
   top: 0;
   z-index: 1;
+  white-space: nowrap;
 }
 
 .table th:first-child {
@@ -384,6 +411,7 @@
   border-bottom: 1px solid var(--border-secondary);
   font-weight: 500;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .table td:nth-child(4) {
@@ -416,20 +444,28 @@
     opacity: 0;
     transform: translateY(-6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* ===== Tablet ===== */
 @media (max-width: 768px) {
+  .card {
+    padding: 20px;
+  }
+
   .layout {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .loanSummaryBar {
     flex-wrap: wrap;
     gap: 12px;
+    padding: 14px 16px;
   }
 
   .loanSummaryDivider {
@@ -438,9 +474,223 @@
 
   .loanSummaryItem {
     min-width: 40%;
+    flex: 1 1 40%;
   }
 
   .savingsGrid {
     flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .savingsCard {
+    flex: 1 1 calc(33% - 8px);
+    min-width: 120px;
+  }
+
+  .table th {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .table td {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 640px) {
+  .card {
+    padding: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    margin-bottom: 18px;
+  }
+
+  .loanSummaryBar {
+    padding: 12px;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .loanSummaryItem {
+    min-width: unset;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .loanSummaryLabel {
+    font-size: 10px;
+    flex-shrink: 0;
+    min-width: 80px;
+  }
+
+  .loanInputWrapper {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .loanInput {
+    max-width: 120px;
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+
+  .loanInputSuffix {
+    font-size: 11px;
+    min-width: 36px;
+  }
+
+  .loanSummaryValue {
+    font-size: 14px;
+  }
+
+  .layout {
+    gap: 16px;
+  }
+
+  .prepaymentForm {
+    padding: 14px;
+  }
+
+  .formRow {
+    gap: 8px;
+  }
+
+  .formGroup {
+    min-width: 80px;
+  }
+
+  .formInput {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .addPrepaymentBtn {
+    padding: 8px 14px;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .prepaymentItem {
+    padding: 8px 10px;
+  }
+
+  .prepaymentInfo {
+    gap: 8px;
+  }
+
+  .prepaymentMonth {
+    font-size: 11px;
+    padding: 2px 8px;
+  }
+
+  .prepaymentAmount {
+    font-size: 13px;
+  }
+
+  .savingsGrid {
+    flex-direction: column;
+  }
+
+  .savingsCard {
+    flex: 1;
+    min-width: unset;
+    padding: 14px;
+  }
+
+  .savingsValue {
+    font-size: 18px;
+  }
+
+  .savingsLabel {
+    font-size: 10px;
+  }
+
+  .sectionTitle {
+    font-size: 13px;
+  }
+
+  .table {
+    font-size: 11px;
+  }
+
+  .table th {
+    padding: 7px 8px;
+    font-size: 10px;
+  }
+
+  .table td {
+    padding: 7px 8px;
+    font-size: 11px;
+  }
+
+  .tableWrapper {
+    max-height: 400px;
+  }
+
+  .emptyState {
+    font-size: 12px;
+    padding: 14px;
+  }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 400px) {
+  .card {
+    padding: 12px;
+  }
+
+  .loanSummaryBar {
+    padding: 10px;
+  }
+
+  .loanInput {
+    max-width: 100px;
+    padding: 5px 6px;
+    font-size: 12px;
+  }
+
+  .loanInputSuffix {
+    font-size: 10px;
+    min-width: 30px;
+  }
+
+  .prepaymentForm {
+    padding: 10px;
+  }
+
+  .formInput {
+    padding: 7px 8px;
+    font-size: 12px;
+  }
+
+  .addPrepaymentBtn {
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+
+  .savingsValue {
+    font-size: 16px;
+  }
+
+  .table th {
+    padding: 6px 6px;
+    font-size: 9px;
+  }
+
+  .table td {
+    padding: 6px 6px;
+    font-size: 10px;
   }
 }

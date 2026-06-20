@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-width: 0; /* prevent grid blowout */
 }
 
 .fullWidth {
@@ -55,15 +56,65 @@
   max-width: 360px;
 }
 
+/* ===== Tablet ===== */
 @media (max-width: 1024px) {
   .topGrid {
     grid-template-columns: 1fr;
   }
 }
 
+/* ===== Small Tablet / Large Phone ===== */
+@media (max-width: 768px) {
+  .main {
+    padding: 24px 0 48px;
+  }
+
+  .topGrid {
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .comingSoon {
+    min-height: 280px;
+  }
+
+  .comingSoonInner {
+    padding: 24px;
+  }
+
+  .comingSoonIcon {
+    font-size: 36px;
+  }
+
+  .comingSoonTitle {
+    font-size: 18px;
+  }
+
+  .comingSoonText {
+    font-size: 13px;
+  }
+}
+
+/* ===== Mobile ===== */
 @media (max-width: 640px) {
   .main {
-    padding: 20px 0 40px;
+    padding: 16px 0 32px;
+  }
+
+  .topGrid {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .fullWidth {
+    margin-top: 4px;
+  }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 400px) {
+  .main {
+    padding: 12px 0 24px;
   }
 }
 
@@ -90,4 +141,15 @@
   font-family: var(--font-family);
   font-size: 10px;
   font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .footer {
+    font-size: 11px;
+    padding: 24px 0 8px;
+  }
+
+  .footerHint {
+    font-size: 10px;
+  }
 }
