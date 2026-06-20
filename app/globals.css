@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ========== CSS Custom Properties (Theme System) ========== */
+:root {
+  /* Light Theme (Default) */
+  --bg-primary: #f5f7fb;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f0f3f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8f9fd;
+  --bg-input: #f5f7fb;
+  --bg-slider-track: #e2e6ef;
+
+  --text-primary: #1a1d29;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --text-inverse: #ffffff;
+
+  --border-primary: #e5e7eb;
+  --border-secondary: #f0f1f5;
+  --border-focus: #4f6ef7;
+
+  --accent-primary: #4f6ef7;
+  --accent-primary-light: #e8ecfe;
+  --accent-primary-dark: #3b5bdb;
+  --accent-secondary: #f59e0b;
+  --accent-secondary-light: #fef3c7;
+  --accent-success: #10b981;
+  --accent-success-light: #d1fae5;
+  --accent-danger: #ef4444;
+  --accent-purple: #8b5cf6;
+  --accent-purple-light: #ede9fe;
+
+  --emi-highlight: #4f6ef7;
+  --interest-color: #f59e0b;
+  --principal-color: #4f6ef7;
+  --balance-color: #8b5cf6;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.1);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Dark Theme — Black, White, Yellow, Blue, Gray */
+[data-theme='dark'] {
+  --bg-primary: #0a0a0b;
+  --bg-secondary: #141416;
+  --bg-tertiary: #1a1a1e;
+  --bg-card: #141416;
+  --bg-card-hover: #1e1e22;
+  --bg-input: #1a1a1e;
+  --bg-slider-track: #2a2a2f;
+
+  --text-primary: #f5f5f5;
+  --text-secondary: #a0a0a8;
+  --text-tertiary: #6b6b75;
+  --text-inverse: #0a0a0b;
+
+  --border-primary: #2a2a2f;
+  --border-secondary: #1e1e22;
+  --border-focus: #3b82f6;
+
+  --accent-primary: #3b82f6;
+  --accent-primary-light: #162036;
+  --accent-primary-dark: #2563eb;
+  --accent-secondary: #eab308;
+  --accent-secondary-light: #2a2410;
+  --accent-success: #22c55e;
+  --accent-success-light: #0d2618;
+  --accent-danger: #ef4444;
+  --accent-purple: #3b82f6;
+  --accent-purple-light: #162036;
+
+  --emi-highlight: #3b82f6;
+  --interest-color: #eab308;
+  --principal-color: #3b82f6;
+  --balance-color: #a0a0a8;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+/* ========== Global Reset & Base ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+  min-height: 100vh;
+}
+
+/* ========== Scrollbar Styling ========== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-tertiary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* ========== Selection Styling ========== */
+::selection {
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+}
+
+/* ========== Sync Indicator ========== */
+@keyframes syncPulse {
+  0%, 100% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.sync-indicator {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: var(--accent-success);
+  color: white;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 1000;
+  animation: syncPulse 1s ease-in-out;
+  pointer-events: none;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.sync-indicator::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* ========== Utility Classes ========== */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========== Number Input Arrows Removal ========== */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* ========== Custom Range Slider ========== */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bg-slider-track);
+  outline: none;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  cursor: pointer;
+  border: 3px solid var(--bg-card);
+  box-shadow: 0 2px 8px rgba(79, 110, 247, 0.3);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 3px 12px rgba(79, 110, 247, 0.5);
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  cursor: pointer;
+  border: 3px solid var(--bg-card);
+  box-shadow: 0 2px 8px rgba(79, 110, 247, 0.3);
+}
+
+/* ========== Keyframe Animations ========== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes countUp {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}

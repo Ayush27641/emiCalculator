@@ -1,0 +1,446 @@
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  animation: fadeInUp 0.5s ease;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-bottom: 24px;
+}
+
+/* Loan summary bar */
+.loanSummaryBar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  margin-bottom: 24px;
+}
+
+.loanSummaryItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.loanSummaryLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+}
+
+.loanSummaryValue {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.loanInputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.loanInput {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  outline: none;
+  transition: all var(--transition-fast);
+  text-align: right;
+  -moz-appearance: textfield;
+  box-sizing: border-box;
+}
+
+.loanInput::-webkit-inner-spin-button,
+.loanInput::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.loanInput:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-primary-light);
+}
+
+.loanInputSuffix {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+  white-space: nowrap;
+  min-width: 48px;
+  text-align: left;
+}
+
+.loanSummaryDivider {
+  width: 1px;
+  height: 32px;
+  background: var(--border-secondary);
+  flex-shrink: 0;
+}
+
+/* Two column layout: left = inputs, right = savings */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionIcon {
+  font-size: 16px;
+}
+
+/* Prepayment input form */
+.prepaymentForm {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.formRow {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 12px;
+}
+
+.formGroup {
+  flex: 1;
+}
+
+.formLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.formInput {
+  width: 100%;
+  padding: 9px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  outline: none;
+  transition: all var(--transition-fast);
+  box-sizing: border-box;
+}
+
+.formInput:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-primary-light);
+}
+
+.addPrepaymentBtn {
+  padding: 9px 18px;
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.addPrepaymentBtn:hover {
+  background: var(--accent-primary-dark);
+  transform: translateY(-1px);
+}
+
+.addPrepaymentBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Prepayments list */
+.prepaymentsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.prepaymentItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  animation: slideIn 0.2s ease;
+}
+
+.prepaymentInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.prepaymentMonth {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-primary);
+  background: var(--accent-primary-light);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.prepaymentAmount {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.removeBtn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+}
+
+.removeBtn:hover {
+  background: var(--accent-danger);
+  color: white;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-tertiary);
+  font-size: 13px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right: Savings results */
+.rightPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.savingsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.savingsCard {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+  transition: all var(--transition-fast);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.savingsCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.savingsCardHighlight {
+  background: var(--accent-success-light);
+  border-color: var(--accent-success);
+}
+
+.savingsLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-tertiary);
+  margin-bottom: 6px;
+}
+
+.savingsValue {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.savingsValueGreen {
+  color: var(--accent-success);
+}
+
+/* Amortization schedule */
+.scheduleSection {
+  margin-top: 4px;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-primary);
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.table th {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 10px 14px;
+  text-align: right;
+  border-bottom: 2px solid var(--border-primary);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table th:first-child {
+  text-align: center;
+}
+
+.table td {
+  padding: 10px 14px;
+  text-align: right;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-secondary);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.table td:nth-child(4) {
+  color: var(--interest-color);
+  font-weight: 600;
+}
+
+.table td:first-child {
+  text-align: center;
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+.table tr:hover td {
+  background: var(--bg-card-hover);
+}
+
+.prepaymentRow td {
+  background: var(--accent-primary-light) !important;
+  font-weight: 600 !important;
+}
+
+.prepaymentHighlight {
+  color: var(--accent-primary) !important;
+  font-weight: 700 !important;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .loanSummaryBar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .loanSummaryDivider {
+    display: none;
+  }
+
+  .loanSummaryItem {
+    min-width: 40%;
+  }
+
+  .savingsGrid {
+    flex-direction: row;
+  }
+}

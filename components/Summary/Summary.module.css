@@ -1,0 +1,137 @@
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.5s ease 0.1s both;
+}
+
+.summaryCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.summaryCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.summaryCardEmi {
+  background: var(--accent-primary);
+  border-color: transparent;
+  color: white;
+}
+
+.summaryCardEmi .summaryLabel {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.summaryCardEmi .summaryValue {
+  color: white;
+}
+
+.summaryLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-tertiary);
+  margin-bottom: 8px;
+}
+
+.summaryValue {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+  animation: countUp 0.3s ease;
+}
+
+.ratioSection {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  animation: fadeInUp 0.5s ease 0.2s both;
+}
+
+.ratioTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.ratioBar {
+  width: 100%;
+  height: 12px;
+  border-radius: 6px;
+  background: var(--bg-slider-track);
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.ratioPrincipal {
+  height: 100%;
+  background: var(--accent-primary);
+  transition: width var(--transition-slow);
+  border-radius: 6px 0 0 6px;
+}
+
+.ratioInterest {
+  height: 100%;
+  background: var(--accent-secondary);
+  transition: width var(--transition-slow);
+  border-radius: 0 6px 6px 0;
+}
+
+.ratioLegend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ratioLegendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.legendDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legendDotPrincipal {
+  background: var(--accent-primary);
+}
+
+.legendDotInterest {
+  background: var(--accent-secondary);
+}
+
+.legendValue {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+@media (max-width: 640px) {
+  .summaryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryValue {
+    font-size: 22px;
+  }
+}
