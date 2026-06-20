@@ -3,7 +3,7 @@
 > A real-time collaborative Loan EMI Calculator where **every change syncs instantly across all open browser tabs** — powered by the BroadcastChannel API. No server. No polling. No localStorage hacks. Pure client-side magic.
 
 <p align="center">
-  <a href="https://emi-calculator-kohl.vercel.app/"><strong>🚀 Live Demo →</strong></a>
+  <a href="https://emi-calculator-kohl.vercel.app/"><strong> Live Demo →</strong></a>
 </p>
 
 <p align="center">
@@ -65,16 +65,16 @@
 
 | Feature | Description |
 |---------|-------------|
-| 📊 **EMI Calculator** | Reducing-balance EMI with dual-input controls (sliders + numeric fields) |
-| 📅 **Amortization Schedule** | Month-by-month table with pagination, break-even detection, chart toggle, and CSV export |
-| 🔍 **Sensitivity Analysis** | Rate ±3% × Tenure ±24mo interactive matrix with current-value highlighting |
-| ⚖️ **Compare Scenarios** | Side-by-side comparison of up to 3 loan configurations with visual breakdowns |
-| 💰 **Prepayment Planner** | Schedule lump-sum prepayments → see interest saved, tenure reduced, updated amortization |
-| 🔄 **Cross-Tab Sync** | All state syncs across browser tabs in real-time via BroadcastChannel API |
-| 🏷️ **Tab Identity** | Unique tab ID, live tab count, leader election badge |
-| ↩️ **Undo (Ctrl+Z)** | Undo last change across all tabs simultaneously (debounced for slider drags) |
-| 🌗 **Dark / Light Theme** | Premium dark mode with curated palette, synced across all tabs |
-| 🔗 **URL State** | Shareable URLs with loan params encoded as query parameters |
+| **EMI Calculator** | Reducing-balance EMI with dual-input controls (sliders + numeric fields) |
+| **Amortization Schedule** | Month-by-month table with pagination, break-even detection, chart toggle, and CSV export |
+| **Sensitivity Analysis** | Rate ±3% × Tenure ±24mo interactive matrix with current-value highlighting |
+| **Compare Scenarios** | Side-by-side comparison of up to 3 loan configurations with visual breakdowns |
+| **Prepayment Planner** | Schedule lump-sum prepayments → see interest saved, tenure reduced, updated amortization |
+| **Cross-Tab Sync** | All state syncs across browser tabs in real-time via BroadcastChannel API |
+| **Tab Identity** | Unique tab ID, live tab count, leader election badge |
+| **Undo (Ctrl+Z)** | Undo last change across all tabs simultaneously (debounced for slider drags) |
+| **Dark / Light Theme** | Premium dark mode with curated palette, synced across all tabs |
+| **URL State** | Shareable URLs with loan params encoded as query parameters |
 
 ---
 
@@ -94,7 +94,7 @@
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -127,7 +127,7 @@ npm start
 
 ---
 
-## 🏗 Architecture Deep-Dive
+## Architecture Deep-Dive
 
 ### Cross-Tab Sync via BroadcastChannel
 
@@ -197,7 +197,7 @@ State flows **down** via props. Updates flow **up** via callback props. Cross-ta
 
 ---
 
-## 📋 Features in Detail
+## Features in Detail
 
 ### 1. EMI Calculator
 
@@ -275,7 +275,7 @@ Everything syncs across tabs in real-time:
 
 ---
 
-## 📐 EMI Formula & Financial Math
+## EMI Formula & Financial Math
 
 ### Standard Reducing-Balance EMI
 
@@ -311,7 +311,7 @@ Tenure Reduced = Original tenure - Actual tenure after prepayment
 
 ---
 
-## 🧩 Technical Challenges & Solutions
+## Technical Challenges & Solutions
 
 ### 1. Browser Throttling Kills Background Tab Heartbeats
 
@@ -343,11 +343,11 @@ Tenure Reduced = Original tenure - Actual tenure after prepayment
 
 **Solution:** The last month explicitly sets `principalPaid = remaining balance`, ensuring the loan closes to exactly ₹0. The EMI for the final month is adjusted accordingly.
 
-> 📄 For the full list of trade-off analyses, see [DESIGN_DECISIONS.md](DESIGN_DECISIONS.md)
+> For the full list of trade-off analyses, see [DESIGN_DECISIONS.md](DESIGN_DECISIONS.md)
 
 ---
 
-## 🛡 Edge Cases Handled
+## Edge Cases Handled
 
 | Edge Case | Handling |
 |-----------|---------|
@@ -363,7 +363,7 @@ Tenure Reduced = Original tenure - Actual tenure after prepayment
 
 ---
 
-## 🔗 URL State & Shareability
+## URL State & Shareability
 
 Loan parameters are encoded in the URL as query parameters:
 
@@ -378,7 +378,7 @@ https://your-deployed-url.vercel.app/?amount=1500000&rate=11&tenure=48
 
 ---
 
-## 🎨 Theming
+## Theming
 
 Two professionally crafted themes with full CSS Custom Property support:
 
@@ -391,7 +391,7 @@ Theme toggle is in the header and **syncs across all tabs** via a dedicated Broa
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 emi-calculator/
@@ -423,7 +423,7 @@ Each component is self-contained with its own `.js` and `.module.css` files.
 
 ---
 
-## 🌐 Browser Compatibility
+## Browser Compatibility
 
 | Browser | Supported | Notes |
 |---------|-----------|-------|
@@ -437,7 +437,7 @@ Each component is self-contained with its own `.js` and `.module.css` files.
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### Light Mode — Calculator View
 ![Light Mode](docs/screenshots/light-mode.png)
