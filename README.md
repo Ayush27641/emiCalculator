@@ -3,7 +3,7 @@
 > A real-time collaborative Loan EMI Calculator where **every change syncs instantly across all open browser tabs** — powered by the BroadcastChannel API. No server. No polling. No localStorage hacks. Pure client-side magic.
 
 <p align="center">
-  <a href="YOUR_DEPLOYED_LINK_HERE"><strong>🚀 Live Demo →</strong></a>
+  <a href="https://emi-calculator-kohl.vercel.app/"><strong>🚀 Live Demo →</strong></a>
 </p>
 
 <p align="center">
